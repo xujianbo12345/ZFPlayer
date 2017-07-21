@@ -287,8 +287,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     
     [self.failBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self);
-        make.width.mas_equalTo(130);
-        make.height.mas_equalTo(33);
+//        make.width.mas_equalTo(130);
+//        make.height.mas_equalTo(33);
     }];
     
     [self.fastView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -510,7 +510,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
  */
 - (void)onDeviceOrientationChange {
     if (ZFPlayerShared.isLockScreen) { return; }
-    self.lockBtn.hidden         = !self.isFullScreen;
+//    self.lockBtn.hidden         = !self.isFullScreen;
     self.fullScreenBtn.selected = self.isFullScreen;
     UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
     if (orientation == UIDeviceOrientationFaceUp || orientation == UIDeviceOrientationFaceDown || orientation == UIDeviceOrientationUnknown || orientation == UIDeviceOrientationPortraitUpsideDown) { return; }
@@ -525,7 +525,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         self.shrink             = NO;
     }
     self.fullScreen             = YES;
-    self.lockBtn.hidden         = !self.isFullScreen;
+//    self.lockBtn.hidden         = !self.isFullScreen;
     self.fullScreenBtn.selected = self.isFullScreen;
     [self.backBtn setImage:ZFPlayerImage(@"ic_tv_back") forState:UIControlStateNormal];
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -551,7 +551,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
  */
 - (void)setOrientationPortraitConstraint {
     self.fullScreen             = NO;
-    self.lockBtn.hidden         = !self.isFullScreen;
+//    self.lockBtn.hidden         = !self.isFullScreen;
     self.fullScreenBtn.selected = self.isFullScreen;
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topImageView.mas_top).offset(3);
@@ -696,7 +696,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         [_lockBtn setImage:ZFPlayerImage(@"ZFPlayer_unlock-nor") forState:UIControlStateNormal];
         [_lockBtn setImage:ZFPlayerImage(@"ZFPlayer_lock-nor") forState:UIControlStateSelected];
         [_lockBtn addTarget:self action:@selector(lockScrrenBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-
+        _lockBtn.hidden = YES;
     }
     return _lockBtn;
 }
@@ -704,8 +704,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (UIButton *)startBtn {
     if (!_startBtn) {
         _startBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_startBtn setImage:ZFPlayerImage(@"ZFPlayer_play") forState:UIControlStateNormal];
-        [_startBtn setImage:ZFPlayerImage(@"ZFPlayer_pause") forState:UIControlStateSelected];
+        [_startBtn setImage:ZFPlayerImage(@"ic_play") forState:UIControlStateNormal];
+        [_startBtn setImage:ZFPlayerImage(@"ic_pause") forState:UIControlStateSelected];
         [_startBtn addTarget:self action:@selector(playBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _startBtn;
@@ -767,7 +767,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         _videoSlider.popUpViewColor = RGBA(19, 19, 9, 1);
         _videoSlider.popUpViewArrowLength = 8;
 
-        [_videoSlider setThumbImage:ZFPlayerImage(@"ZFPlayer_slider") forState:UIControlStateNormal];
+        [_videoSlider setThumbImage:ZFPlayerImage(@"cirle") forState:UIControlStateNormal];
         _videoSlider.maximumValue          = 1;
         _videoSlider.minimumTrackTintColor = [UIColor whiteColor];
         _videoSlider.maximumTrackTintColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5];
@@ -826,7 +826,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (UIButton *)repeatBtn {
     if (!_repeatBtn) {
         _repeatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_repeatBtn setImage:ZFPlayerImage(@"ZFPlayer_repeat_video") forState:UIControlStateNormal];
+        [_repeatBtn setImage:ZFPlayerImage(@"ic_reply_l") forState:UIControlStateNormal];
         [_repeatBtn addTarget:self action:@selector(repeatBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _repeatBtn;
@@ -863,11 +863,13 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (UIButton *)failBtn {
     if (!_failBtn) {
-        _failBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_failBtn setTitle:@"加载失败,点击重试" forState:UIControlStateNormal];
-        [_failBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _failBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
-        _failBtn.backgroundColor = RGBA(0, 0, 0, 0.7);
+        _failBtn = [[UIButton alloc] init];
+//        [_failBtn setTitle:@"加载失败,点击重试" forState:UIControlStateNormal];
+//        [_failBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        _failBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
+//        _failBtn.backgroundColor = RGBA(0, 0, 0, 0.7);
+//        _failBtn.backgroundColor = [UIColor whiteColor];
+        [_failBtn setImage: ZFPlayerImage(@"ic_refresh") forState:UIControlStateNormal];
         [_failBtn addTarget:self action:@selector(failBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _failBtn;
@@ -957,7 +959,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     self.shrink                      = NO;
     self.showing                     = NO;
     self.playeEnd                    = NO;
-    self.lockBtn.hidden              = !self.isFullScreen;
+//    self.lockBtn.hidden              = !self.isFullScreen;
     self.failBtn.hidden              = YES;
     self.placeholderImageView.alpha  = 1;
     [self hideControlView];
@@ -989,7 +991,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     if (playerModel.title) { self.titleLabel.text = playerModel.title; }
     // 设置网络占位图片
     if (playerModel.placeholderImageURLString) {
-        [self.placeholderImageView setImageWithURLString:playerModel.placeholderImageURLString placeholder:ZFPlayerImage(@"ZFPlayer_loading_bgView")];
+//        [self.placeholderImageView setImageWithURLString:playerModel.placeholderImageURLString placeholder:ZFPlayerImage(@"ZFPlayer_loading_bgView")];
     } else {
         self.placeholderImageView.image = playerModel.placeholderImage;
     }
@@ -1118,8 +1120,9 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     });
     self.dragged = NO;
     // 结束滑动时候把开始播放按钮改为播放状态
-    self.startBtn.selected = YES;
-    self.centerStartBtn.selected = YES;
+//    self.startBtn.selected = YES;
+//    self.centerStartBtn.selected = YES;
+    [self zf_playerPlayBtnState:YES];
     // 滑动结束延时隐藏controlView
     [self autoFadeOutControlView];
 }
