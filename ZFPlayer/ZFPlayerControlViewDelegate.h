@@ -63,4 +63,6 @@
 /** 控制层即将隐藏 */
 - (void)zf_controlViewWillHidden:(UIView *)controlView isFullscreen:(BOOL)fullscreen;
 
+/** 静音事件 */
+- (void)zf_controlView:(UIView *)controlView voiceAction:(UIButton *)sender;
 @end

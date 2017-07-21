@@ -90,6 +90,8 @@ typedef NS_ENUM(NSInteger, PanDirection){
 /** 视频填充模式 */
 @property (nonatomic, copy) NSString                 *videoGravity;
 
+@property (nonatomic, assign) CGFloat currentVolume;
+
 #pragma mark - UITableViewCell PlayerView
 
 /** palyer加到tableView */
@@ -1454,6 +1456,15 @@ typedef NS_ENUM(NSInteger, PanDirection){
     if (!self.isAutoPlay) {
         self.isAutoPlay = YES;
         [self configZFPlayer];
+    }
+}
+
+- (void)zf_controlView:(UIView *)controlView voiceAction:(UIButton *)sender {
+    if (sender.selected) {
+        self.currentVolume = self.player.volume;
+        [self.player setVolume:0.0];
+    } else {
+        [self.player setVolume:self.currentVolume];
     }
 }
 
