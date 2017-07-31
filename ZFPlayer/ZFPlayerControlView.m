@@ -545,6 +545,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         make.bottom.equalTo(self.bottomImageView.mas_bottom).offset(-8);
         make.width.height.mas_equalTo(30);
     }];
+    
+    self.titleLabel.hidden = NO;
 }
 /**
  *  设置竖屏的约束
@@ -574,6 +576,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         make.bottom.equalTo(self.bottomImageView.mas_bottom).offset(-8);
         make.width.height.mas_equalTo(30);
     }];
+    
+    self.titleLabel.hidden = YES;
 }
 
 #pragma mark - Private Method
