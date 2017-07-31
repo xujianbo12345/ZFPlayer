@@ -37,7 +37,9 @@
 - (void)zf_playerControlViewWillShow:(UIView *)controlView isFullscreen:(BOOL)fullscreen;
 /** 控制层即将隐藏 */
 - (void)zf_playerControlViewWillHidden:(UIView *)controlView isFullscreen:(BOOL)fullscreen;
-
+//zhibo8
+/** 点击播放按钮 */
+- (void)zf_playerControlViewPlayAction;
 @end
 
 // playerLayer的填充模式（默认：等比例填充，直到一个维度到达区域边界）
@@ -122,4 +124,9 @@ typedef NS_ENUM(NSInteger, ZFPlayerState) {
  */
 - (void)pause;
 
+//zhibo8
+/**
+ *  是否在当前页面本地播放
+ */
+@property (nonatomic, assign) BOOL isLocalPlay;
 @end
