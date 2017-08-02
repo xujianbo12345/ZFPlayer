@@ -541,7 +541,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }];
     
     [self.volumeBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(50);
+        make.leading.mas_equalTo(58);
         make.bottom.equalTo(self.bottomImageView.mas_bottom).offset(-8);
         make.width.height.mas_equalTo(30);
     }];

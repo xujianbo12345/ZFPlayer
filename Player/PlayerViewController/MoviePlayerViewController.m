@@ -81,7 +81,7 @@
     */
     
     // 自动播放，默认不自动播放
-    [self.playerView autoPlayTheVideo];
+//    [self.playerView autoPlayTheVideo];
 }
 
 // 返回值要必须为NO
@@ -136,7 +136,8 @@
         _playerModel                  = [[ZFPlayerModel alloc] init];
         _playerModel.title            = @"这里设置视频标题";
         _playerModel.videoURL         = self.videoURL;
-        _playerModel.placeholderImage = [UIImage imageNamed:@"loading_bgView1"];
+//        _playerModel.placeholderImage = [UIImage imageNamed:@"loading_bgView1"];
+        _playerModel.placeholderImageURLString = @"http://d.ifengimg.com/mw978_mh598/p0.ifengimg.com/a/2017_31/97788ea7e274fc5_size178_w1000_h555.jpg";
         _playerModel.fatherView       = self.playerFatherView;
 //        _playerModel.resolutionDic = @{@"高清" : self.videoURL.absoluteString,
 //                                       @"标清" : self.videoURL.absoluteString};
