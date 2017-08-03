@@ -188,7 +188,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }];
     
     [self.backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.topImageView.mas_leading).offset(10);
+        make.leading.equalTo(self.topImageView.mas_leading).offset(5);
         make.top.equalTo(self.topImageView.mas_top).offset(3);
         make.width.height.mas_equalTo(40);
     }];
@@ -530,7 +530,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self.backBtn setImage:ZFPlayerImage(@"ic_tv_back") forState:UIControlStateNormal];
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topImageView.mas_top).offset(23);
-        make.leading.equalTo(self.topImageView.mas_leading).offset(10);
+        make.leading.equalTo(self.topImageView.mas_leading).offset(5);
         make.width.height.mas_equalTo(40);
     }];
     
@@ -557,7 +557,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     self.fullScreenBtn.selected = self.isFullScreen;
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topImageView.mas_top).offset(3);
-        make.leading.equalTo(self.topImageView.mas_leading).offset(10);
+        make.leading.equalTo(self.topImageView.mas_leading).offset(5);
         make.width.height.mas_equalTo(40);
     }];
 
