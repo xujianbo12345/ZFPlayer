@@ -885,6 +885,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         _fastView.backgroundColor     = RGBA(0, 0, 0, 0.8);
         _fastView.layer.cornerRadius  = 4;
         _fastView.layer.masksToBounds = YES;
+        _fastView.hidden = YES;
     }
     return _fastView;
 }
@@ -1032,6 +1033,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         self.showing = YES;
         [self autoFadeOutControlView];
     }];
+    
+    self.centerStartBtn.hidden = NO;
 }
 
 /**
@@ -1047,6 +1050,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     } completion:^(BOOL finished) {
         self.showing = NO;
     }];
+    
+    self.centerStartBtn.hidden = YES;
 }
 
 /** 小屏播放 */
@@ -1112,7 +1117,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     } else {
         self.fastImageView.image = ZFPlayerImage(@"ZFPlayer_fast_backward");
     }
-    self.fastView.hidden           = preview;
+//    self.fastView.hidden           = preview;
     self.fastTimeLabel.text        = timeStr;
     self.fastProgressView.progress = draggedValue;
 
@@ -1171,6 +1176,8 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     self.backgroundColor  = RGBA(0, 0, 0, .3);
     ZFPlayerShared.isStatusBarHidden = NO;
     self.bottomProgressView.alpha = 0;
+    
+    self.centerStartBtn.hidden = YES;
 }
 
 /** 
@@ -1224,7 +1231,9 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 - (void)zf_playerPlayBtnState:(BOOL)state {
     self.startBtn.selected = state;
     self.centerStartBtn.selected = state;
-    self.centerStartBtn.hidden = state;
+//    self.centerStartBtn.hidden = state;
+    
+    [self zf_playerShowControlView];
 }
 
 /** 锁定屏幕方向按钮状态 */
