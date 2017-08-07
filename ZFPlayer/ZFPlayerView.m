@@ -294,9 +294,7 @@ typedef NS_ENUM(NSInteger, PanDirection){
     }else { // 重置控制层View
         [self.controlView zf_playerResetControlView];
     }
-    if (self.controlView.delegate) {
-        self.controlView.delegate = nil;
-    }
+
     self.controlView   = nil;
     // 非重播时，移除当前playerView
     if (!self.repeatToPlay) { [self removeFromSuperview]; }
