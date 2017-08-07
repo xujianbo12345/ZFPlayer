@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, ZFPlayerState) {
 /** 是否被用户暂停 */
 @property (nonatomic, assign, readonly) BOOL          isPauseByUser;
 /** 播发器的几种状态 */
-@property (nonatomic, assign, readonly) ZFPlayerState state;
+@property (nonatomic, assign) ZFPlayerState state;
 /** 静音（默认为NO）*/
 @property (nonatomic, assign) BOOL                    mute;
 /** 当cell划出屏幕的时候停止播放（默认为NO） */
