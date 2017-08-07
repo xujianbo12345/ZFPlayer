@@ -30,7 +30,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
 
-static const CGFloat ZFPlayerAnimationTimeInterval             = 7.0f;
+static const CGFloat ZFPlayerAnimationTimeInterval             = 3.0f;
 static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 @interface ZFPlayerControlView () <UIGestureRecognizerDelegate>
