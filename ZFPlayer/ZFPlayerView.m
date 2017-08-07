@@ -146,7 +146,6 @@ typedef NS_ENUM(NSInteger, PanDirection){
  */
 - (void)initializeThePlayer {
     self.cellPlayerOnCenter = YES;
-    self.isLocalPlay = YES;
 }
 
 - (void)dealloc {
@@ -1446,12 +1445,6 @@ typedef NS_ENUM(NSInteger, PanDirection){
 #pragma mark - ZFPlayerControlViewDelegate
 
 - (void)zf_controlView:(UIView *)controlView playAction:(UIButton *)sender {
-    if (!self.isLocalPlay) {
-        if ([self.delegate respondsToSelector:@selector(zf_playerControlViewPlayAction)]) {
-            [self.delegate zf_playerControlViewPlayAction];
-        }
-        return;
-    }
     self.isPauseByUser = !self.isPauseByUser;
     if (self.isPauseByUser) {
         [self pause];
