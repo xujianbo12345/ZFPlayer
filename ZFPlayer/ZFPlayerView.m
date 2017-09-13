@@ -1023,6 +1023,10 @@ typedef NS_ENUM(NSInteger, PanDirection){
         [self resetPlayer];
     } else {
         if (!self.isDragged) { // 如果不是拖拽中，直接结束播放
+            if (self.isFullScreen) {
+                //如果全屏就变成竖屏
+                [self interfaceOrientation:UIInterfaceOrientationPortrait];
+            }
             self.playDidEnd = YES;
             [self.controlView zf_playerPlayEnd];
         }
