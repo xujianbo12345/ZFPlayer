@@ -197,7 +197,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(self.topImageView.mas_leading).offset(5 + safeEdge);
-        make.top.equalTo(self.topImageView.mas_top).offset(3);
+        make.top.equalTo(self.topImageView.mas_top).offset(23);
         make.width.height.mas_equalTo(40);
     }];
     
@@ -572,7 +572,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self makeSubViewsConstraints];
     
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.topImageView.mas_top).offset(3);
+        make.top.equalTo(self.topImageView.mas_top).offset(23);
         make.leading.equalTo(self.topImageView.mas_leading).offset(5);
         make.width.height.mas_equalTo(40);
     }];
