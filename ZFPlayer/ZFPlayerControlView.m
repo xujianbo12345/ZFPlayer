@@ -184,19 +184,19 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }];
     
     [self.closeBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(self.mas_trailing).offset(7);
+        make.right.equalTo(self.mas_right).offset(7);
         make.top.equalTo(self.mas_top).offset(-7);
         make.width.height.mas_equalTo(20);
     }];
     
     [self.topImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.equalTo(self);
+        make.left.right.equalTo(self);
         make.top.equalTo(self.mas_top).offset(0);
         make.height.mas_equalTo(50);
     }];
     
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.topImageView.mas_leading).offset(5 + safeEdge);
+        make.left.equalTo(self.topImageView.mas_left).offset(5 + safeEdge);
         make.top.equalTo(self.topImageView.mas_top).offset(23);
         make.width.height.mas_equalTo(40);
     }];
@@ -204,30 +204,30 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self.downLoadBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(49);
-        make.trailing.equalTo(self.topImageView.mas_trailing).offset(-10-safeEdge);
+        make.right.equalTo(self.topImageView.mas_right).offset(-10-safeEdge);
         make.centerY.equalTo(self.backBtn.mas_centerY);
     }];
     
     [self.resolutionBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(25);
-        make.trailing.equalTo(self.downLoadBtn.mas_leading).offset(-10);
+        make.right.equalTo(self.downLoadBtn.mas_left).offset(-10);
         make.centerY.equalTo(self.backBtn.mas_centerY);
     }];
     
     [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.backBtn.mas_trailing).offset(5);
+        make.left.equalTo(self.backBtn.mas_right).offset(5);
         make.centerY.equalTo(self.backBtn.mas_centerY);
-        make.trailing.equalTo(self.resolutionBtn.mas_leading).offset(-10);
+        make.right.equalTo(self.resolutionBtn.mas_left).offset(-10);
     }];
     
     [self.bottomImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.bottom.mas_equalTo(0);
+        make.left.right.bottom.mas_equalTo(0);
         make.height.mas_equalTo(50 + safeBottom);
     }];
     
     [self.volumeBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.bottomImageView.mas_leading).offset(12 + safeEdge);
+        make.left.equalTo(self.bottomImageView.mas_left).offset(12 + safeEdge);
         make.top.equalTo(self.bottomImageView.mas_top).offset(8);
         make.width.height.mas_equalTo(30);
     }];
@@ -239,38 +239,38 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }];
     
     [self.currentTimeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.volumeBtn.mas_trailing).offset(10);
+        make.left.equalTo(self.volumeBtn.mas_right).offset(10);
         make.centerY.equalTo(self.volumeBtn.mas_centerY);
         make.width.mas_equalTo(43);
     }];
     
     [self.fullScreenBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(24);
-        make.trailing.equalTo(self.bottomImageView.mas_trailing).offset(-5-safeEdge);
+        make.right.equalTo(self.bottomImageView.mas_right).offset(-5-safeEdge);
         make.centerY.equalTo(self.volumeBtn.mas_centerY);
     }];
     
     [self.totalTimeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(self.fullScreenBtn.mas_leading).offset(-10);
+        make.right.equalTo(self.fullScreenBtn.mas_left).offset(-10);
         make.centerY.equalTo(self.volumeBtn.mas_centerY);
         make.width.mas_equalTo(43);
     }];
     
     [self.progressView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.currentTimeLabel.mas_trailing).offset(4);
-        make.trailing.equalTo(self.totalTimeLabel.mas_leading).offset(-4);
+        make.left.equalTo(self.currentTimeLabel.mas_right).offset(4);
+        make.right.equalTo(self.totalTimeLabel.mas_left).offset(-4);
         make.centerY.equalTo(self.volumeBtn.mas_centerY);
     }];
     
     [self.videoSlider mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.currentTimeLabel.mas_trailing).offset(4);
-        make.trailing.equalTo(self.totalTimeLabel.mas_leading).offset(-4);
+        make.left.equalTo(self.currentTimeLabel.mas_right).offset(4);
+        make.right.equalTo(self.totalTimeLabel.mas_left).offset(-4);
         make.centerY.equalTo(self.currentTimeLabel.mas_centerY).offset(-1);
         make.height.mas_equalTo(30);
     }];
     
     [self.lockBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.mas_leading).offset(15 + safeEdge);
+        make.left.equalTo(self.mas_left).offset(15 + safeEdge);
         make.centerY.equalTo(self.mas_centerY);
         make.width.height.mas_equalTo(32);
     }];
@@ -311,18 +311,18 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }];
     
     [self.fastTimeLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.with.trailing.mas_equalTo(0);
+        make.left.with.right.mas_equalTo(0);
         make.top.mas_equalTo(self.fastImageView.mas_bottom).offset(2);
     }];
     
     [self.fastProgressView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(12 + safeEdge);
-        make.trailing.mas_equalTo(-12 - safeEdge);
+        make.left.mas_equalTo(12 + safeEdge);
+        make.right.mas_equalTo(-12 - safeEdge);
         make.top.mas_equalTo(self.fastTimeLabel.mas_bottom).offset(10);
     }];
     
     [self.bottomProgressView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.trailing.mas_offset(0);
+        make.left.right.mas_offset(0);
         make.bottom.mas_offset(0);
     }];
 }
@@ -544,7 +544,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topImageView.mas_top).offset(23);
-        make.leading.equalTo(self.topImageView.mas_leading).offset(5+safeEdge);
+        make.left.equalTo(self.topImageView.mas_left).offset(5+safeEdge);
         make.width.height.mas_equalTo(40);
     }];
     
@@ -555,7 +555,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }];
     
     [self.volumeBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.mas_equalTo(35 + safeEdge);
+        make.left.mas_equalTo(35 + safeEdge);
         make.top.equalTo(self.bottomImageView.mas_top).offset(8);
         make.width.height.mas_equalTo(30);
     }];
@@ -573,7 +573,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     
     [self.backBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.topImageView.mas_top).offset(23);
-        make.leading.equalTo(self.topImageView.mas_leading).offset(5);
+        make.left.equalTo(self.topImageView.mas_left).offset(5);
         make.width.height.mas_equalTo(40);
     }];
     
@@ -588,7 +588,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }];
     
     [self.volumeBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.bottomImageView.mas_leading).offset(12);
+        make.left.equalTo(self.bottomImageView.mas_left).offset(12);
         make.bottom.equalTo(self.bottomImageView.mas_bottom).offset(-8);
         make.width.height.mas_equalTo(30);
     }];
@@ -1220,7 +1220,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     [self.resolutionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(25*resolutionArray.count);
-        make.leading.equalTo(self.resolutionBtn.mas_leading).offset(0);
+        make.left.equalTo(self.resolutionBtn.mas_left).offset(0);
         make.top.equalTo(self.resolutionBtn.mas_bottom).offset(0);
     }];
     
